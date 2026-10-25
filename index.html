@@ -211,7 +211,16 @@ h1,h2,h3,p{margin:0}
 .status.plan i{background:#B3AA9A}
 .status.soon{background:#FCEDE4;color:#B0501F;border-color:#F5D3BF}
 .status.soon i{background:var(--orange)}
+.status.live{background:var(--yellow);color:var(--ink);border-color:#E9B33A}
+.status.live i{background:var(--ink)}
 .game-desc{font-size:14px;color:var(--ink-soft);line-height:1.8}
+.game-cta{
+  display:inline-flex;align-items:center;gap:7px;margin-top:15px;
+  font-size:13.5px;font-weight:800;color:var(--orange);
+}
+.game-cta svg{transition:transform .22s var(--ease)}
+.game:hover .game-cta svg{transform:translateX(3px)}
+.game:hover .game-cta{color:#C85F2C}
 
 /* ---------- 理念 ---------- */
 .why-card{
@@ -507,10 +516,10 @@ h1,h2,h3,p{margin:0}
     <div class="section-head reveal">
       <span class="eyebrow">02 / Projects</span>
       <h2>我们的游戏</h2>
-      <p>目前正在制作中的项目。我们不会提前承诺发售时间，会在真正可玩之后再与大家见面。</p>
+      <p>目前正在制作中的项目。第一款已在 TapTap 开启小规模测试，点开即可试玩；其余两作仍在打磨中。</p>
     </div>
     <div class="game-grid">
-      <a class="game reveal d1" href="#contact" aria-label="项目一，开发中">
+      <a class="game reveal d1" href="https://www.taptap.cn/app/995656" target="_blank" rel="noopener noreferrer" aria-label="残楼15F — 前往 TapTap 查看并下载">
         <div class="game-cover cover-a">
           <span class="num">01</span>
           <span class="px" style="left:18%;top:22%;background:#F6C24B"></span>
@@ -521,10 +530,15 @@ h1,h2,h3,p{margin:0}
         </div>
         <div class="game-body">
           <div class="game-top">
-            <span class="game-title">Project 01</span>
-            <span class="status"><i></i>开发中</span>
+            <span class="game-title">残楼15F</span>
+            <span class="status live"><i></i>TapTap 测试中</span>
           </div>
-          <p class="game-desc">一款生存题材的作品，围绕资源、时间与选择展开。细节将在进入可玩阶段后公布。</p>
+          <p class="game-desc">一款围绕垂直空间与生存抉择展开的作品，目前在 TapTap 开启小规模测试，欢迎试玩并反馈。</p>
+          <span class="game-cta">前往 TapTap 下载
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4.5 11.5 11.5 4.5M6 4.5h5.5V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
         </div>
       </a>
 
