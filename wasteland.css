@@ -1,177 +1,18 @@
-/* Pixel wasteland R&D theme. Layout remains in styles.css. */
-:root {
-  color-scheme: dark;
-  --paper: #101b20;
-  --ink: #edf0df;
-  --muted: #b4c3bb;
-  --line: #3b514e;
-  --yellow: #efbd64;
-  --green: #192c2d;
-  --orange: #efbd64;
-}
+/* Background only; all typography, colors and components use styles.css. */
 body {
   position: relative;
   isolation: isolate;
-  background: #101b20;
 }
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: -1;
   pointer-events: none;
-  background: linear-gradient(90deg, #0b171d80, #0b171d99 45%, #0b171d66),
+  background: linear-gradient(90deg, #f7f3e9d4, #f7f3e9eb 48%, #f7f3e9d4),
     url("assets/wasteland-lab.webp") center center / cover no-repeat;
   image-rendering: pixelated;
 }
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image: linear-gradient(#9bbdb708 1px, transparent 1px),
-    linear-gradient(90deg, #9bbdb708 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-::selection { background: var(--yellow); color: #142124; }
-.header {
-  background: #101b20f5;
-  border-bottom: 1px solid #526c61;
-  box-shadow: 0 3px 0 #070f14;
-}
-.brand small, .eyebrow, .art-tag {
-  font-family: "Cascadia Mono", Consolas, var(--sans);
-}
-.brand-mark { box-shadow: 0 0 0 1px #aa9059; }
-.nav-contact, .menu-toggle { border-color: #7f9a85; border-radius: 2px; }
-.nav-bar nav a:hover, .text-link:hover, .email:hover { color: #ffd98b; }
-.hero {
-  position: relative;
-  margin-block: 32px;
-  padding: 48px 36px;
-  background: #102125eb;
-  border: 1px solid #49605a;
-  border-top: 3px solid #d6ad63;
-  box-shadow: 6px 6px 0 #080f14a6;
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  left: -1px;
-  top: -3px;
-  width: 28px;
-  height: 3px;
-  background: #b4dfcd;
-}
-.hero h1 { font-size: clamp(30px, 3.3vw, 47px); }
-.highlight {
-  color: #f5d58b;
-  background: linear-gradient(transparent 73%, #b78b3640 73%, #b78b3640 95%, transparent 95%);
-}
-.hero-art img {
-  mix-blend-mode: normal;
-  border-radius: 2px;
-  border: 1px solid #9a8758;
-  box-shadow: 4px 4px 0 #060e13;
-}
-.art-tag { color: #c9dac9; border-color: #66816d; border-radius: 0; }
-.hero-art figcaption { flex-wrap: wrap; }
-.hero-foot span+span::before { color: #708b7d; }
-.live-dot { background: #b5d6a4; box-shadow: 0 0 7px #a0d58550; }
-.button { border-radius: 2px; }
-.primary {
-  background: #e8bc68;
-  color: #172226;
-  border: 1px solid #f7d995;
-  box-shadow: 3px 3px 0 #080f14;
-}
-.primary:hover { background: #ffdc8b; color: #172226; }
-.text-link { color: #efdbac; }
-.ticker {
-  background: #13232ae8;
-  border-color: #5b7060;
-  color: #c7d5bc;
-  font-family: Consolas, var(--sans);
-}
-#games { padding-block: 58px; }
-.section-heading {
-  background: #102125eb;
-  border-left: 3px solid #d6ad63;
-  padding: 22px 26px;
-}
-.featured-game {
-  background: #14262af5;
-  border: 1px solid #637969;
-  border-radius: 2px;
-  box-shadow: 6px 6px 0 #080f14a6;
-}
-.game-art { background: #101b20; }
-.art-arrow { background: #e8bc68; color: #172226; border-radius: 2px; }
-.image-caption { background: #0a161bea; color: #e1e9d7; border-radius: 0; }
-.status, .tags span { border-color: #617964; color: #dce4c8; border-radius: 2px; }
-.status { background: #253a31; }
-.next-projects { gap: 22px; }
-.next-projects>div {
-  background: #102125f0;
-  border: 1px solid #405c54;
-  padding: 22px 20px;
-}
-.project-number, .principles article>span { color: #d4b77c; }
-.small-status { background: #2b4139; color: #d2e2bd; border-radius: 0; }
-.about-section {
-  background: #102125f2;
-  border-block: 1px solid #4d685c;
-}
-.about-intro h2 span { color: #d4dca8; }
-.principles article, .principles article:first-child { border-color: #476053; }
-.studio-note {
-  background: #202c28f5;
-  border: 1px solid #847246;
-  border-top: 3px solid #d6ad63;
-  border-radius: 2px;
-  box-shadow: 6px 6px 0 #080f14a6;
-}
-.note-label { border-color: #6d704e; }
-.note-label small, .note-sign { color: #c5c6a7; }
-.studio-note>div>p:not(.eyebrow) { color: #c7d2c4; }
-.contact-section { background: #102125f2; border-color: #4d685c; }
-.email { border-color: #839a7d; }
-.contact-details>p a { border-color: #829c7b; }
-.footer {
-  background: #101b20f2;
-  padding-inline: 24px;
-  border-color: #4d685c;
-}
-.toast, .skip-link {
-  background: #e8bc68;
-  color: #172226;
-  border: 1px solid #ffe2a0;
-  border-radius: 2px;
-}
-@media (min-width: 1450px) {
-  .hero { padding-block: 62px; }
-  .hero h1 { font-size: 48px; }
-}
-@media (max-width: 1050px) {
-  .hero { padding: 36px 26px; }
-  .hero h1 { font-size: 32px; }
-  .desktop-break { display: none; }
-}
 @media (max-width: 760px) {
   body::before { background-position: 40% center; }
-  .hero { margin-block: 20px; padding: 30px 20px; }
-  .hero h1 { font-size: clamp(25px, 6.1vw, 40px); }
-  .hero h1 .highlight { white-space: normal; }
-  .hero .actions { flex-wrap: wrap; gap: 18px; }
-  .nav-bar nav { background: #101b20; }
-  .menu-toggle { color: var(--ink); }
-  .section-heading { padding: 20px; }
-  .next-projects { gap: 14px; }
-  .next-projects>div, .next-projects>div+div { border: 1px solid #405c54; padding: 20px 16px; }
-  .next-projects>div { gap: 12px; }
-  .next-projects .small-status { display: none; }
-  .studio-note { padding: 26px; }
-  .note-label { border-bottom-color: #6d704e; }
-  .footer { padding-inline: 16px; }
 }

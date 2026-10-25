@@ -2,7 +2,7 @@
 
 ## 全站背景：动漫像素废土研发工坊
 
-文件：`assets/wasteland-lab.webp`，1536 × 1024。内置 image_gen 生成，配合深色遮罩、网格和终端面板用于全站背景。
+文件：`assets/wasteland-lab.webp`，1536 × 1024。内置 image_gen 生成，配合奶油色遮罩用于全站背景；保留原有页面配色、布局和组件样式。
 
 ```text
 Use case: stylized-concept. Asset type: full website background for an independent game studio, wide landscape 1536x1024. Primary request: anime pixel-art post-apocalyptic research and development workshop overlooking a ruined city, refined high-end 2D game environment pixel art with crisp visible square pixels, NOT a photograph and NOT 3D. Composition: a panoramic scene from inside a reclaimed industrial laboratory, at the left and right edges are mechanical workbenches, CRT terminals with subtle unreadable cyan glow, tool racks, cables, salvaged steel beams and tiny warm amber task lamps; beyond a wide central window a layered derelict skyline with rooftop antennas and a distant communications tower under a smoky muted blue-green dusk sky. Keep central 60 percent especially low contrast, dark, uncluttered and atmospheric, suitable behind readable website content. Visual storytelling: a small stubborn working research outpost amid the wasteland; repairs, prototypes, engineering. Palette: deep charcoal navy, desaturated teal, dusty olive, rust brown with sparse amber and pale cyan accents. Detailed but restrained handcrafted anime game pixel art, chunky pixel edges, carefully placed clusters, atmospheric dithering. Lighting subdued, calm, resourceful, mechanical and slightly melancholic. No people, no cat, no text, no readable letters, no logos, no watermark, no UI overlays, no frames. Image should fill the whole rectangle.
