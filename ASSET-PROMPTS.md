@@ -2,9 +2,15 @@
 
 生成方式：内置 image_gen（imagegen 技能），2026-10-25。图片经 WebP 压缩后在页面中使用。
 
-## 工作室主视觉
+## 工作室主视觉（机械风格修订）
 
-文件：`assets/studio-hero.webp`，1536 × 1024。
+文件：`assets/studio-hero.webp`，1536 × 1024。按工作室偏机械的方向修订，以原主视觉为参考，替换为机械猫和金属机械工坊；当前使用下方修订提示词。
+
+```text
+undefined
+```
+
+原版提示词（历史记录）：
 
 ```text
 Use case: illustration-story. Asset type: independent game studio website hero, wide landscape 3:2. Primary request: a beautifully art-directed miniature creative game studio inside a whimsical yellow ceramic porridge bowl, a curious small cream cat sitting beside the bowl, a tiny game controller resting in the foreground, steam rising gently. Scene: warm ivory paper backdrop, tiny architectural windows and plants emerging from the bowl as a little imaginative world. Style: premium handcrafted clay diorama mixed with tactile editorial illustration, subtle paper grain, charming but sophisticated, detailed materials, sculptural forms, soft amber and sage accents, dark espresso details. Composition: one coherent compact diorama centered, generous clean ivory margin, all objects fully visible. Lighting: warm soft studio daylight, gentle grounded shadows. Constraints: no text, no letters, no logo, no watermark, no UI. Match a warm independent game studio called Schrodinger's Porridge.
