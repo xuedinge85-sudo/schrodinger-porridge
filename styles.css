@@ -99,22 +99,11 @@ a:focus-visible,button:focus-visible {
   margin-top:3px
 }
 .brand-mark {
-  position:relative;
-  background:var(--yellow);
   width:46px;
   height:46px;
   border-radius:50%;
-  display:grid;
-  place-items:center;
-  font-family:serif;
-  font-size:24px;
-  transform:rotate(-8deg)
-}
-.brand-mark span {
-  position:absolute;
-  font-size:15px;
-  right:-4px;
-  top:-5px
+  object-fit:contain;
+  flex-shrink:0
 }
 .nav-bar nav {
   display:flex;
@@ -698,8 +687,7 @@ h2 {
 }
 .brand-mark {
   width:39px;
-  height:39px;
-  font-size:22px
+  height:39px
 }
 .menu-toggle {
   display:flex;
