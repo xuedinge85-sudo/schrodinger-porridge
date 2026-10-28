@@ -1,5 +1,13 @@
 # 网站图片生成记录
 
+## 站立奶龙挂件
+
+源文件：`assets/mascot-original.jpg`，用户提供；网页展示的透明版本：`assets/standing-mascot.png`，使用内置 image_gen 移除白色背景，保留站立姿势。
+
+```text
+Use case: background-extraction. Asset type: transparent website decoration. Remove only the solid white background and floor shadow from the supplied image, producing a genuinely transparent background. Preserve the original character exactly: standing upright in the exact same pose with its original short legs and feet, same body, face, eye size, facial expression, colors, texture, proportions, lighting and camera framing. Do not redesign, pose, redraw, or invent any body parts. Keep the complete original character from head to feet. No text, props, frame, pedestal or shadow on the background.
+```
+
 ## 当前工作室主视觉：深色机械工坊
 
 文件：`assets/studio-hero-night.webp`，由内置 image_gen 以原机械猫工坊图为参考，调整背景和灯光后压缩为 WebP。

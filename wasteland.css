@@ -38,8 +38,30 @@ main, .header, .footer {
 .header {
   background: #10131b66;
 }
+.hero-art {
+  padding-top: 75px;
+}
 .hero-art img {
   mix-blend-mode: normal;
+}
+/* A decorative, transparent mascot stands on the artwork edge. */
+.hero-mascot {
+  position: absolute;
+  z-index: 1;
+  top: 75px;
+  right: 9%;
+  width: clamp(100px, 25%, 140px);
+  transform: translateY(-96%);
+  pointer-events: none;
+}
+.hero-art .hero-mascot img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 0;
+  filter: drop-shadow(0 3px 4px #0009);
 }
 /* Keep the supplied square cover complete at every viewport size. */
 .game-art img {
