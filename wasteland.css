@@ -1,4 +1,13 @@
-/* Background only; keep the original typography, controls and layout. */
+/* Transparent content over the studio room; retain layout and component shapes. */
+:root {
+  color-scheme: dark;
+  --paper: #10131b;
+  --ink: #f4f0e6;
+  --muted: #d2d6dc;
+  --line: #d2d6dc45;
+  --green: transparent;
+  --orange: #efbd68;
+}
 body {
   position: relative;
   isolation: isolate;
@@ -9,18 +18,69 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(#080c1426, #080c1440),
+  background: linear-gradient(#060a124d, #060a1280),
     url("assets/studio-library-room.webp") center center / cover no-repeat;
 }
-/* Light reading surfaces retain the original dark text over the dark room. */
+main, .header, .footer {
+  text-shadow: 0 2px 5px #000c;
+}
 .hero,
 #games,
 #notes,
 .ticker,
+.about-section,
 .contact-section,
+.featured-game,
+.studio-note,
 .footer {
-  background-color: #f7f3e9f5;
+  background: transparent;
+}
+.header {
+  background: #10131b66;
+}
+.hero-art img {
+  mix-blend-mode: normal;
+}
+.highlight {
+  background: linear-gradient(transparent 72%, #edbd5652 72%, #edbd5652 93%, transparent 93%);
+}
+.primary, .art-arrow {
+  background: var(--yellow);
+  color: #20251d;
+  text-shadow: none;
+}
+.primary:hover {
+  background: #ffda8c;
+}
+.live-dot {
+  background: #c2dc9a;
+}
+.about-intro h2 span, .small-status {
+  color: #c7dfa9;
+}
+.project-number, .principles article>span {
+  color: #d7c393;
+}
+.studio-note>div>p:not(.eyebrow), .note-label small, .note-sign {
+  color: var(--muted);
+}
+.art-tag, .tags span, .status, .principles article,
+.principles article:first-child, .note-label {
+  border-color: var(--line);
+}
+.menu-toggle {
+  color: var(--ink);
+}
+.toast, .skip-link {
+  background: #151d29;
+  color: var(--ink);
+}
+::selection {
+  background: var(--yellow);
+  color: #20251d;
+  text-shadow: none;
 }
 @media (max-width: 760px) {
   body::before { background-position: 42% center; }
+  #nav-links.open { background: #10131be6; }
 }
