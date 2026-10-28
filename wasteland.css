@@ -1,4 +1,4 @@
-/* Background only; all typography, colors and components use styles.css. */
+/* Background only; keep the original typography, controls and layout. */
 body {
   position: relative;
   isolation: isolate;
@@ -9,10 +9,18 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(90deg, #f7f3e9d4, #f7f3e9eb 48%, #f7f3e9d4),
-    url("assets/wasteland-lab.webp") center center / cover no-repeat;
-  image-rendering: pixelated;
+  background: linear-gradient(#080c1426, #080c1440),
+    url("assets/studio-library-room.webp") center center / cover no-repeat;
+}
+/* Light reading surfaces retain the original dark text over the dark room. */
+.hero,
+#games,
+#notes,
+.ticker,
+.contact-section,
+.footer {
+  background-color: #f7f3e9f5;
 }
 @media (max-width: 760px) {
-  body::before { background-position: 40% center; }
+  body::before { background-position: 42% center; }
 }
