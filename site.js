@@ -29,3 +29,71 @@ document.querySelector('#copy-email').addEventListener('click', async () => {
   try { await navigator.clipboard.writeText('3536689119@qq.com'); notify('邮箱已复制，期待你的来信。'); }
   catch { notify('请长按或选中邮箱复制：3536689119@qq.com'); }
 });
+
+// Keep the mascot in the visible window while it is being moved.
+const mascot = document.querySelector('.hero-mascot');
+let mascotX = 0;
+let mascotY = 0;
+let drag = null;
+
+function setMascotPosition(x, y) {
+  mascotX = x;
+  mascotY = y;
+  mascot.style.setProperty('--mascot-x', `${x}px`);
+  mascot.style.setProperty('--mascot-y', `${y}px`);
+}
+
+function boundedMovement(dx, dy, rect) {
+  return {
+    x: Math.max(-rect.left, Math.min(dx, window.innerWidth - rect.right)),
+    y: Math.max(-rect.top, Math.min(dy, window.innerHeight - rect.bottom))
+  };
+}
+
+mascot.addEventListener('pointerdown', event => {
+  if (!event.isPrimary || (event.pointerType === 'mouse' && event.button !== 0)) return;
+  event.preventDefault();
+  drag = {
+    id: event.pointerId,
+    startX: event.clientX,
+    startY: event.clientY,
+    originX: mascotX,
+    originY: mascotY,
+    rect: mascot.getBoundingClientRect()
+  };
+  mascot.setPointerCapture(event.pointerId);
+  mascot.classList.add('dragging');
+});
+
+mascot.addEventListener('pointermove', event => {
+  if (!drag || event.pointerId !== drag.id) return;
+  const movement = boundedMovement(event.clientX - drag.startX, event.clientY - drag.startY, drag.rect);
+  setMascotPosition(drag.originX + movement.x, drag.originY + movement.y);
+});
+
+function stopDragging(event) {
+  if (!drag || event.pointerId !== drag.id) return;
+  drag = null;
+  mascot.classList.remove('dragging');
+}
+mascot.addEventListener('pointerup', stopDragging);
+mascot.addEventListener('pointercancel', stopDragging);
+mascot.addEventListener('lostpointercapture', stopDragging);
+
+mascot.addEventListener('keydown', event => {
+  if (event.key === 'Home') {
+    event.preventDefault();
+    setMascotPosition(0, 0);
+    return;
+  }
+  const step = event.shiftKey ? 30 : 10;
+  const keys = {
+    ArrowLeft: [-step, 0], ArrowRight: [step, 0],
+    ArrowUp: [0, -step], ArrowDown: [0, step]
+  };
+  const direction = keys[event.key];
+  if (!direction) return;
+  event.preventDefault();
+  const movement = boundedMovement(direction[0], direction[1], mascot.getBoundingClientRect());
+  setMascotPosition(mascotX + movement.x, mascotY + movement.y);
+});

@@ -44,16 +44,23 @@ main, .header, .footer {
 .hero-art img {
   mix-blend-mode: normal;
 }
-/* A decorative, transparent mascot stands on the artwork edge. */
+/* The mascot begins on the artwork edge and can be moved by the visitor. */
 .hero-mascot {
   position: absolute;
   z-index: 1;
   top: 75px;
   right: 9%;
   width: clamp(100px, 25%, 140px);
-  transform: translateY(-96%);
-  pointer-events: none;
+  transform: translate(var(--mascot-x, 0px), calc(-96% + var(--mascot-y, 0px)));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  line-height: 0;
 }
+.hero-mascot.dragging { cursor: grabbing; }
 .hero-art .hero-mascot img {
   width: 100%;
   height: auto;
