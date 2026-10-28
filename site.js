@@ -35,6 +35,21 @@ const mascot = document.querySelector('.hero-mascot');
 let mascotX = 0;
 let mascotY = 0;
 let drag = null;
+let suppressWaveUntil = 0;
+let lastTouchTap = null;
+let waveTimer = null;
+
+function waveHello() {
+  if (mascot.classList.contains('is-waving')) return;
+  mascot.classList.add('is-waving');
+  clearTimeout(waveTimer);
+  waveTimer = setTimeout(() => mascot.classList.remove('is-waving'), 1200);
+}
+
+mascot.addEventListener('dblclick', event => {
+  event.preventDefault();
+  if (performance.now() >= suppressWaveUntil) waveHello();
+});
 
 function setMascotPosition(x, y) {
   mascotX = x;
@@ -59,6 +74,7 @@ mascot.addEventListener('pointerdown', event => {
     startY: event.clientY,
     originX: mascotX,
     originY: mascotY,
+    moved: false,
     rect: mascot.getBoundingClientRect()
   };
   mascot.setPointerCapture(event.pointerId);
@@ -67,12 +83,26 @@ mascot.addEventListener('pointerdown', event => {
 
 mascot.addEventListener('pointermove', event => {
   if (!drag || event.pointerId !== drag.id) return;
+  if (Math.hypot(event.clientX - drag.startX, event.clientY - drag.startY) > 6) drag.moved = true;
   const movement = boundedMovement(event.clientX - drag.startX, event.clientY - drag.startY, drag.rect);
   setMascotPosition(drag.originX + movement.x, drag.originY + movement.y);
 });
 
 function stopDragging(event) {
   if (!drag || event.pointerId !== drag.id) return;
+  if (drag.moved) {
+    suppressWaveUntil = performance.now() + 400;
+    lastTouchTap = null;
+  } else if (event.type === 'pointerup' && event.pointerType !== 'mouse') {
+    const now = performance.now();
+    if (lastTouchTap && now - lastTouchTap.time <= 400 &&
+        Math.hypot(event.clientX - lastTouchTap.x, event.clientY - lastTouchTap.y) <= 30) {
+      waveHello();
+      lastTouchTap = null;
+    } else {
+      lastTouchTap = { time: now, x: event.clientX, y: event.clientY };
+    }
+  }
   drag = null;
   mascot.classList.remove('dragging');
 }
@@ -81,6 +111,11 @@ mascot.addEventListener('pointercancel', stopDragging);
 mascot.addEventListener('lostpointercapture', stopDragging);
 
 mascot.addEventListener('keydown', event => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    waveHello();
+    return;
+  }
   if (event.key === 'Home') {
     event.preventDefault();
     setMascotPosition(0, 0);

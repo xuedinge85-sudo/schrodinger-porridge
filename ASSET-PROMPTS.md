@@ -1,5 +1,13 @@
 # 网站图片生成记录
 
+## 奶龙招手图片
+
+源文件：`assets/waving-mascot-source.jpg`，由用户提供。网页使用的透明版本：`assets/waving-mascot.png`，由内置 image_gen 去除背景；网页通过分层动画使手挥动两次。
+
+```text
+Use case: background-extraction. Asset type: transparent waving character image for an interactive website mascot. Remove only the white background and the floor shadow from the supplied image and make the background genuinely transparent. Preserve the supplied character and its raised waving arm exactly, including its standing pose, the little hand and fingers, large black eyes, facial expression, yellow body, original proportions, composition, lighting and shading. Keep the complete body, both feet and entire raised hand fully visible, exactly in their original positions. Do not change the pose, redesign, add props or text, or replace the hand with a different shape.
+```
+
 ## 站立奶龙挂件
 
 源文件：`assets/mascot-original.jpg`，用户提供；网页展示的透明版本：`assets/standing-mascot.png`，使用内置 image_gen 移除白色背景，保留站立姿势。
