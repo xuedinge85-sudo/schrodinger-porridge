@@ -41,6 +41,10 @@ main, .header, .footer {
 .hero-art img {
   mix-blend-mode: normal;
 }
+/* Keep the supplied square cover complete at every viewport size. */
+.game-art img {
+  object-fit: contain;
+}
 .highlight {
   background: linear-gradient(transparent 72%, #edbd5652 72%, #edbd5652 93%, transparent 93%);
 }

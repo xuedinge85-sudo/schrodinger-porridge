@@ -1,5 +1,17 @@
 # 网站图片生成记录
 
+## 当前工作室主视觉：深色机械工坊
+
+文件：`assets/studio-hero-night.webp`，由内置 image_gen 以原机械猫工坊图为参考，调整背景和灯光后压缩为 WebP。
+
+```text
+undefined
+```
+
+## 当前《残楼15F》封面
+
+文件：`assets/ruins-15f-cover.png`，633 × 633，由用户提供，按原文件使用。
+
 ## 当前全站背景：深色书房与游戏工作室
 
 文件：`assets/studio-library-room.webp`，1536 × 1024。2026-10-28 通过内置 image_gen 生成。深色房间包含书架、游戏收藏、双屏书桌和暖灯；内容区域透明，采用浅色文字与轻微阴影保证可读性，保留原有字体、布局和组件形状。下方废土背景保留为历史记录，已不在页面使用。
@@ -20,7 +32,7 @@ Use case: stylized-concept. Asset type: full website background for an independe
 
 ## 工作室主视觉（机械风格修订）
 
-文件：`assets/studio-hero.webp`，1536 × 1024。按工作室偏机械的方向修订，以原主视觉为参考，替换为机械猫和金属机械工坊；当前使用下方修订提示词。
+文件：`assets/studio-hero.webp`，1536 × 1024。按工作室偏机械的方向修订，以原主视觉为参考，替换为机械猫和金属机械工坊；下方为原修订提示词，当前页面使用上方深色版本。
 
 ```text
 Use case: style-transfer. Asset type: website hero illustration for Schrodinger's Porridge independent game studio. Edit the supplied image to express a mechanical engineering and game-making studio, rather than a cottage fantasy studio. Preserve the wide 1536x1024 composition, bowl-sized miniature cutaway workshop, friendly curious cat at lower left, controller in foreground, soft ivory background and warm amber lighting. Transform the cat into an elegantly designed small mechanical robot cat: articulated brushed-metal legs, rounded cream enamel armor panels, brass joints, segmented tail, small amber optical eyes, clearly a machine with no fur, charming and intelligent rather than a toy. Transform the bowl into a mustard enamel and brushed-steel vessel with tasteful rivets, seams and a few visible gears, retaining its recognizably porridge-bowl silhouette. Transform the interior into a detailed precision mechanical game workshop: metal mezzanine, steel stairs, workbenches, precision tools, circuit boards, mechanical prototypes, organized cables, pipes, motor housings, functional articulated robotic arm and monitor workstations. Replace cottage roof, vines and large trees with compact industrial workshop architecture, metal roof and ventilation. Keep the original coherent object placement and premium miniature diorama craftsmanship. Muted steel gray, graphite, warm ivory, mustard enamel and aged brass accents. Sophisticated restrained mechanical aesthetic, not excessive steampunk ornament. Preserve gentle steam and inviting creative atmosphere. All subjects fully visible within frame. No text, no logos, no watermark, no UI.
@@ -34,7 +46,7 @@ Use case: illustration-story. Asset type: independent game studio website hero, 
 
 ## 残楼15F 世界观概念封面
 
-文件：`assets/ruins-15f.webp`，1536 × 1024。页面明确标记为概念图，非实机画面。
+历史文件：`assets/ruins-15f.webp`，1536 × 1024。当前页面使用上方用户提供的封面。
 
 ```text
 Use case: stylized-concept. Asset type: independent survival game website cover, landscape 3:2. Primary request: evocative cinematic concept art of a crumbling fifteen-storey Chinese residential apartment tower in an abandoned city during a rainy blue-green dusk. Several small warm amber windows and a rooftop makeshift shelter suggest surviving residents. Show the entire tall building from a slight elevated three-quarter angle, exposed stairwell and worn concrete balconies, tangled utilities and vegetation. Beautiful painterly architectural diorama, atmospheric depth, detailed weathered concrete, realistic proportions, restrained moody desaturated forest-green and charcoal palette with golden light, sophisticated indie survival game key art. Tower the dominant clear subject, dramatic but quiet and human. Constraints: no text, no numbers, no titles, no watermark, no UI, no gameplay screenshot, no gore.
